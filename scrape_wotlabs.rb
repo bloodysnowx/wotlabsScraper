@@ -4,8 +4,8 @@ require 'net/http'
 # Nokogiriライブラリの読み込み
 require 'nokogiri'
 
-def printTable(table)
-  p table.css('tr').map{|node| node.css('td')[1].inner_text}.slice(1, 14).join("\x09")
+def getStats(table)
+  return table.css('tr').map{|node| node.css('td')[1].inner_text}.slice(1, 14)
 end
 
 def getTable(doc)
@@ -13,10 +13,11 @@ def getTable(doc)
 end
 
 def scrape(name)
-  p name
   html = Net::HTTP.get('wotlabs.net', '/sea/player/' + name)
   doc = Nokogiri::HTML(html)
-  printTable(getTable(doc))
+  table = getTable(doc)
+  stats = getStats(table)
+  p (stats.unshift(name)).join("\x09")
 end
 
 # ['bloodysnowx'].each do |name|
