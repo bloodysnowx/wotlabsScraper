@@ -17,12 +17,13 @@ def scrape(name)
   doc = Nokogiri::HTML(html)
   table = getTable(doc)
   stats = getStats(table)
-  p (stats.unshift(name)).join("\x09")
+  return stats
 end
 
 # ['bloodysnowx'].each do |name|
 ['bloodysnowx', 'ehou_maki', 'khiro256', 'LOHZ', 'mamastan', 'cocota24', 
  'DForrester', 'watashiehou', 'mikoshi_fighter', 'okaotank', 'lower_animals',
  'willkatz', 'skmswitch'].each do |name|
-  scrape(name)
+  p name
+  p scrape(name).join("\x09")
 end
