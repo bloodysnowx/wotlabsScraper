@@ -23,6 +23,6 @@ end
 # ['bloodysnowx'].each do |name|
 ['bloodysnowx', 'ehou_maki', 'khiro256', 'LOHZ', 'mamastan', 'cocota24', 
  'DForrester', 'watashiehou', 'mikoshi_fighter', 'okaotank', 'lower_animals',
- 'willkatz'].each do |name|
+ 'willkatz', 'skmswitch'].each do |name|
   scrape(name)
 end
