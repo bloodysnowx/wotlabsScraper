@@ -9,7 +9,7 @@ def getStats(table)
 end
 
 def getTable(doc)
-  return doc.xpath('//*[@id="tankerStats"]/table[@class="gridtable generalStats"]')
+  return doc.xpath('//*[@id="tankerStats"]/table[@class="gridtable generalStats hideMobile"]')
 end
 
 def scrape(name)
