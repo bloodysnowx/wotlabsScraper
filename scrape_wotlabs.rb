@@ -23,7 +23,7 @@ end
 # ['bloodysnowx'].each do |name|
 ['bloodysnowx', 'ehou_maki', 'khiro256', 'LOHZ', 'mamastan', 'cocota24', 
  'DForrester', 'watashiehou', 'mikoshi_fighter', 'okaotank', 'lower_animals',
- 'willkatz', 'skmswitch'].each do |name|
+ 'willkatz', 'skmswitch', 'jakky2014'].each do |name|
   p name
   p scrape(name).join("\x09")
 end
