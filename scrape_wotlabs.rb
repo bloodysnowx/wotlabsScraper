@@ -21,9 +21,15 @@ def scrape(name)
 end
 
 # ['bloodysnowx'].each do |name|
-['bloodysnowx', 'ehou_maki', 'khiro256', 'LOHZ', 'mamastan', 'cocota24', 
- 'DForrester', 'watashiehou', 'mikoshi_fighter', 'okaotank', 'lower_animals',
- 'willkatz', 'skmswitch', 'jakky2014'].each do |name|
-  p name
-  p scrape(name).join("\x09")
+ids = {bloodysnowx: "ちゆき", ehou_maki: "えほう", khiro256: "きいろ", LOHZ: "LOH", mamastan: "まます", cocota24: "ここた", 
+ DForrester: "さいころ", watashiehou: "RK12", mikoshi_fighter: "みこし", okaotank: "おかお", lower_animals: "jenga",
+  willkatz: "Merkatz", skmswitch: "すきま", jakky2014: "Jakky"}
+ids.each do |key, name|
+  p key
+  p scrape(key.id2name).join("\x09")
+end
+
+ids.each do |key, name|
+  scraped = scrape(key.id2name)
+  p name + " -> " + key.id2name + " : " + scraped[1] + ", " + sprintf("%.2f", scraped[2].to_f / scraped[0].to_f * 100.0) + "%, " + scraped[13]
 end
