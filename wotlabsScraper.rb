@@ -35,14 +35,14 @@ wotlabsScraper = WotlabsScraper.new
 
 # ['bloodysnowx'].each do |name|
 ids = {bloodysnowx: "ちゆき", ehou_maki: "えほう", khiro256: "きいろ", LOHZ: "LOH", mamastan: "まます", cocota24: "ここた", 
- DForrester: "さいころ", watashiehou: "RK12", mikoshi_fighter: "みこし", okaotank: "おかお", lower_animals: "jenga",
+ DForrester: "さいころ", watashiehou: "RK12", mikoshi8: "みこし", okaotank: "おかお", lower_animals: "jenga",
   willkatz: "Merkatz", skmswitch: "すきま", jakky2014: "Jakky"}
 ids.each do |key, name|
-  p key
-  p wotlabsScraper.scrape(key.id2name).join("\x09")
+  puts key
+  puts wotlabsScraper.scrape(key.id2name).join("\x09")
 end
 
 ids.each do |key, name|
   scraped = wotlabsScraper.scrape(key.id2name)
-  p name + " -> " + key.id2name + " : " + scraped[1] + ", " + sprintf("%.2f", scraped[2].to_f / scraped[0].to_f * 100.0) + "%, " + scraped[13]
+  puts name + " -> " + key.id2name + " : " + scraped[1] + ", " + sprintf("%.2f", scraped[2].to_f / scraped[0].to_f * 100.0) + "%, " + scraped[13]
 end
